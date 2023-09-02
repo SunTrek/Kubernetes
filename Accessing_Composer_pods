@@ -1,2 +1,56 @@
 
-kubectl exec -it airflow-worker-7h9rr -n composer-2-4-1-airflow-2-5-3-f5f5e65e bash
+== To list Namespaces
+ojhaashutosh54@cloudshell:~ (sre-project-397019)$ kubectl get namespaces
+NAME                                    STATUS   AGE
+composer-2-4-1-airflow-2-5-3-3d0b6e23   Active   27m
+composer-system                         Active   28m
+composer-user-workloads                 Active   28m
+default                                 Active   30m
+gke-gmp-system                          Active   29m
+gke-managed-filestorecsi                Active   29m
+gmp-public                              Active   29m
+kube-node-lease                         Active   31m
+kube-public                             Active   31m
+kube-system                             Active   31m
+
+
+= To list the Pods in given Namespace
+  kubectl get pods -n composer-2-4-1-airflow-2-5-3-f5f5e65e
+
+=== To execute Interactive Shell for a POD:
+  kubectl exec -it airflow-worker-7h9rr -n composer-2-4-1-airflow-2-5-3-f5f5e65e bash
+          airflow@airflow-worker-7h9rr:~$ ll
+total 46
+drwxr-xr-x 1 airflow airflow 4096 Sep  2 14:40 ./
+drwxr-xr-x 1 root    root    4096 Aug 14 17:30 ../
+-rw-r--r-- 1 airflow airflow  220 Jan  1  2000 .bash_logout
+-rw-r--r-- 1 airflow airflow 3771 Jan  1  2000 .bashrc
+drwxr-xr-x 3 airflow airflow 4096 Sep  2 14:40 .config/
+drwxr-x--- 3 airflow airflow 4096 Sep  2 14:40 .kube/
+-rw-r--r-- 1 airflow airflow  807 Jan  1  2000 .profile
+-rw-r--r-- 1 airflow airflow    0 Sep  2 14:40 .sudo_as_admin_successful
+-r--r----- 1 root    airflow 2962 Sep  2 14:40 composer_kube_config
+drwxr-xr-x 2 airflow root    4096 Sep  2 14:20 container-comms/
+drwxrwxrwx 4 root    root    4096 Sep  2 14:41 gcs/
+drwxr-xr-x 3 root    root    4096 Sep  2 14:20 gcsfuse/
+-rw------- 1 airflow airflow 1209 Sep  2 14:40 gke_gcloud_auth_plugin_cache
+airflow@airflow-worker-7h9rr:~$ 
+
+airflow@airflow-worker-7h9rr:~$ ll
+total 46
+drwxr-xr-x 1 airflow airflow 4096 Sep  2 14:40 ./
+drwxr-xr-x 1 root    root    4096 Aug 14 17:30 ../
+-rw-r--r-- 1 airflow airflow  220 Jan  1  2000 .bash_logout
+-rw-r--r-- 1 airflow airflow 3771 Jan  1  2000 .bashrc
+drwxr-xr-x 3 airflow airflow 4096 Sep  2 14:40 .config/
+drwxr-x--- 3 airflow airflow 4096 Sep  2 14:40 .kube/
+-rw-r--r-- 1 airflow airflow  807 Jan  1  2000 .profile
+-rw-r--r-- 1 airflow airflow    0 Sep  2 14:40 .sudo_as_admin_successful
+-r--r----- 1 root    airflow 2962 Sep  2 14:40 composer_kube_config
+drwxr-xr-x 2 airflow root    4096 Sep  2 14:20 container-comms/
+drwxrwxrwx 4 root    root    4096 Sep  2 14:41 gcs/
+drwxr-xr-x 3 root    root    4096 Sep  2 14:20 gcsfuse/
+-rw------- 1 airflow airflow 1209 Sep  2 14:40 gke_gcloud_auth_plugin_cache
+airflow@airflow-worker-7h9rr:~$ 
+
+

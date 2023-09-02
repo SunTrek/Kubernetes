@@ -1,0 +1,2 @@
+
+kubectl exec -it airflow-worker-7h9rr -n composer-2-4-1-airflow-2-5-3-f5f5e65e bash
